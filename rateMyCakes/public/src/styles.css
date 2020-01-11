@@ -1,0 +1,176 @@
+* {
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    /* outline-style: solid; */
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lightpink;
+    border-radius: 10px;
+}
+
+.container {
+    width: 800px;
+    height: auto;
+    margin: 10px;
+    border: 2px solid lightblue;
+    padding: 5px;
+    box-shadow: 2px 2px 2px steelblue;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: coral underline;
+    margin-bottom: 10px;
+}
+
+.submitform {
+    display: inline-block;
+    margin: 5px;
+    width: 300px;
+    height: 250px;
+    border: 1px solid lightblue;
+    box-shadow: 2px 2px 2px steelblue;
+    padding: 5px 5px 5px 10px;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+h2 {
+    margin: 10px;
+    border-bottom: 2px solid coral;
+    padding: 5px;
+    font-size: 15pt;
+}
+
+.submitform input[type=text] {
+    border: 2px solid lightpink;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.submitform input[type=submit] {
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: coral;
+}
+
+.cakelist {
+    vertical-align: top;
+    display: inline-block;
+    margin: 5px 5px 5px 15px;
+    width: 430px;
+    height: 250px;
+    border: 1px solid lightblue;
+    box-shadow: 2px 2px 2px steelblue;
+    padding: 5px 5px 5px 10px;
+    overflow: auto;
+}
+
+.cake {
+    margin: 5px 5px 20px 5px;
+}
+
+.clickableimage {
+    display: inline-block;
+}
+
+.cake img {
+    display: inline-block;
+    min-height: 100px;
+    max-width: 200px;
+}
+
+.cake form {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.cake select {
+    display: inline-block;
+    border: 2px solid lightpink;
+    padding: 5px;
+    margin-left: 10px;
+    width: 150px;
+}
+
+.cake input[type=submit] {
+    padding: 10px;
+    font-weight: bold;
+    background-color: coral;
+}
+
+.cake textarea {
+    resize: none;
+    margin-left: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid lightpink;
+}
+
+.cake p {
+    margin-left: 10px;
+}
+
+.details {
+    text-align: center;
+    vertical-align: top;
+    margin: 10px 5px 5px 5px;
+    width: 768px;
+    height: 350px;
+    border: 1px solid lightblue;
+    box-shadow: 2px 2px 2px steelblue;
+    padding: 5px 5px 5px 10px;
+    overflow: auto;
+}
+
+.details img {
+    display: inline-block;
+    min-height: 100px;
+    max-height: 250px;
+    max-width: 300px;
+    margin-left: 10px;
+}
+
+.details p:first-of-type {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.commentsection {
+    vertical-align: top;
+    width: 350px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.comment {
+    width: 100%;
+    border: 1px solid coral;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.comment p:first-of-type {
+    font-weight: bold;
+}
+
+.comment p {
+    font-style: italic;
+    margin-left: 10px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Murder Dashboard</title>
+    <meta name="description" content="No, no, not that kind. Probably.">
+</head>
+
+<style>
+    * {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        /* outline-style: solid; */
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    table {
+        margin: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    thead {
+        font-weight: bold;
+        border: 1px solid black;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    button,
+    input[type=submit],
+    td,
+    tr,
+    th {
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    p {
+        margin: 5px;
+    }
+
+    input[type=text],
+    input[type=number] {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <center>
+
+        <h1>MANAGE YOUR MURDER</h1>
+
+        <h2>Current Murder Members</h2>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Color</th>
+                <th>Actions</th>
+            </thead>
+            <% for (var crow of crows) { %>
+            <tr>
+                <td><a href="/crows/<%= crow.id %>"><%= crow.name %></a></td>
+                <td><%= crow.age %></td>
+                <td><%= crow.color %></td>
+                <td><a href="crows/edit/<%= crow.id %>"><button>Edit</button></a><br>
+                    <form action="crows/destroy/<%= crow.id %>" method="POST">
+                        <input type="submit" value="Remove">
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+
+        <p><a href="/crows/new"><button>Add a Crow</button></a></p>
+    </center>
+
+</body>
+
+</html>

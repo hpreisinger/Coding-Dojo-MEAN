@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Message Board</title>
+    <meta name="description" content="I can't think of anything to say here.">
+</head>
+
+<style>
+    * {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        /* outline-style: solid; */
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    table {
+        margin: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    thead {
+        font-weight: bold;
+        border: 1px solid black;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    button,
+    input[type=submit],
+    td,
+    tr,
+    th {
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    p,
+    h3 {
+        margin: 5px;
+    }
+
+    input[type=text],
+    input[type=number] {
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    textarea {
+        width: 98%;
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    .container {
+        width: 90%;
+        margin: 30px;
+    }
+
+    .buttonrow {
+        margin: 5px;
+        text-align: right;
+    }
+
+    .errors {
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    .post {
+        margin: 20px;
+    }
+
+    .comments {
+        margin-left: 20px;
+    }
+
+    .comments form {
+        margin-top: 20px;
+    }
+
+    .comment {
+        margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 5px;
+    }
+</style>
+
+<body>
+    <h1>The Dojo Message Board</h1>
+
+    <div class="container">
+
+        <div class="errors">
+            <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+            <h3><%= x %></h3>
+            <% } %>
+            <% } %>
+        </div>
+
+        <h2>Add Your Message</h2>
+        <form action="/addPost" method="POST">
+            <p>Name:</p>
+            <p><input type="text" name="author"></p>
+            <p>Message:</p>
+            <p><textarea name="content" rows=10></textarea></p>
+            <div class="buttonrow">
+                <input type="submit" value="Post Message">
+            </div>
+        </form>
+
+        <% for (var post of posts) { %>
+        <div class="post">
+            <h2>Name: <%= post.author %></h2>
+            <h2>Message: <%= post.content %></h2>
+            <div class="comments">
+                <h3><u>Comments</u></h3>
+                <% for (var comment of post.comments) { %>
+                <div class="comment">
+                    <p>Name: <%= comment.author %></p>
+                    <p>Comment: <%= comment.content %></p>
+                </div>
+                <% } %>
+
+                <form action="/addComment/<%= post.id %>" method="POST">
+                    <p>Name:</p>
+                    <p><input type="text" name="author"></p>
+                    <p>Comment:</p>
+                    <p><textarea name="content" rows=5></textarea></p>
+                    <div class="buttonrow">
+                        <input type="submit" value="Post Comment">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+</body>
+
+</html>

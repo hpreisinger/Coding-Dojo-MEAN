@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h1>Rate My Cakes</h1>
+
+  <div class="submitform">
+    <h2>Submit a cake to be rated</h2>
+    <form (submit)="createCakeViaService()">
+      <p>Baker Name <span class="error" *ngIf="name.errors">(currently invalid)</span></p>
+      <input type="text" name="baker" [(ngModel)]="newCake.baker" required minlength="1" #name="ngModel" />
+      <p>Cake Image URL <span class="error" *ngIf="imageURL.errors">(currently invalid)</span></p>
+      <input type="text" name="imageURL" [(ngModel)]="newCake.imageURL" required minlength="1"
+        pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)" #imageURL="ngModel" />
+      <p><input type="submit" value="SUBMIT" /></p>
+    </form>
+  </div>
+
+  <div class="cakelist">
+    <h2>View and rate cakes</h2>
+
+    <div class="cake" *ngFor="let cake of allCakes">
+      <div class="clickableimage" (click)="getOneCakeViaService(cake._id)">
+        <img [src]="cake.imageURL">
+      </div>
+      <form (submit)="addCommentViaService(cake._id)">
+        <p>Rate This Cake!</p>
+        <p class="error" *ngIf="rating.errors">(currently invalid)</p>
+        <select required #rating="ngModel" name="rating" [(ngModel)]="newComment.rating">
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+        </select>
+        <p>Comment</p>
+        <p class="error" *ngIf="content.errors">(currently invalid)</p>
+        <textarea required minlength="1" #content="ngModel" name="content" [(ngModel)]="newComment.content"></textarea>
+        <p><input type="submit" value="SUBMIT" /></p>
+      </form>
+    </div>
+
+  </div>
+
+  <app-detail-component *ngIf="focusCake.baker != ''" [focusCake]="focusCake" [focusCakeAverage]="focusCakeAverage">
+  </app-detail-component>
+
+</div>
+
+<router-outlet></router-outlet>

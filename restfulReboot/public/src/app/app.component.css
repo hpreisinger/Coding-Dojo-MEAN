@@ -1,0 +1,87 @@
+* {
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    /* outline-style: solid; */
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+}
+
+h1 {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    color: whitesmoke;
+    background-color: rgb(119, 64, 64);
+    box-shadow: 1px 3px 5px slategray;
+}
+
+h2 {
+    padding-left: 3px;
+    margin-bottom: 5px;
+}
+
+.tasklist, .editor {
+    vertical-align: top;
+    display: inline-block;
+    width: 350px;
+    margin: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 1px 3px 5px slategray;
+}
+
+.task {
+    border: 2px solid brown;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 1px 3px 5px slategray;
+}
+
+.task p:first-of-type {
+    font-weight: bold;
+}
+
+.task p {
+    margin-bottom: 10px;
+}
+
+.buttons {
+    text-align: right;
+}
+
+.buttons button {
+    margin: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 1px 3px 5px slategray;
+    font-weight: bold;
+}
+
+.editor {
+    background-color: lightslategrey;
+}
+
+.editor p{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.editor input[type=text]{
+    border: 2px solid brown;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+}
+
+.editor input[type=submit] {
+    margin: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 1px 3px 5px darkslategray;
+}

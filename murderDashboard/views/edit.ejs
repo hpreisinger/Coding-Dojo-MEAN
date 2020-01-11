@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Murder Dashboard</title>
+    <meta name="description" content="No, no, not that kind. Probably.">
+</head>
+
+<style>
+    * {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        /* outline-style: solid; */
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    table {
+        margin: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    thead {
+        font-weight: bold;
+        border: 1px solid black;
+        background-color: darkslategray;
+        color: white;
+    }
+
+    button,
+    input[type=submit],
+    td,
+    tr,
+    th {
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    p {
+        margin: 5px;
+    }
+
+    input[type=text],
+    input[type=number] {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <center>
+
+        <h1>EDIT CROW: <%= crow.name %></h1>
+        <form action="/crows/<%= crow.id %>" method="POST">
+            <p>Name:
+                <input type="text" name="name" value=<%= crow.name %>>
+            </p>
+            <p>Age:
+                <input type="number" name="age" value=<%= crow.age %>>
+            </p>
+            <p>Color:
+                <input type="text" name="color" value=<%= crow.color %>>
+            </p>
+            <input type="submit">
+        </form>
+        <p><a href="/"><button>Back to Dashboard</button></a></p>
+
+    </center>
+
+</body>
+
+</html>

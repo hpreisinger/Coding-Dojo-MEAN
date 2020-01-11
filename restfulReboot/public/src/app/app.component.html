@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="container">
+    <h1>Restful Tasks API</h1>
+
+    <div class="tasklist">
+      <h2>Task List</h2>
+
+      <div *ngFor="let task of tasks" class="task">
+        <p>{{task.title}}</p>
+        <p>{{task.description}}</p>
+        <div class="buttons">
+          <button (click)="getTaskDetails(task._id)">EDIT</button>
+          <button (click)="deleteTask(task._id)">DELETE</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="showDetails" class="editor">
+      <form (submit)="editTask(details._id)">
+        <p>Title</p>
+        <input type=text name="details.title" [(ngModel)]="details.title">
+        <p>Description</p>
+        <input type=text name="details.description" [(ngModel)]="details.description">
+        <div class="buttons">
+          <p><input type="submit" value="SUBMIT"></p>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

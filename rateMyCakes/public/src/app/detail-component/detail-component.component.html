@@ -1,0 +1,17 @@
+<div class="details">
+    <h2>Cake Details</h2>
+
+    <p>Baked by {{focusCake.baker}}</p>
+    <img [src]="focusCake.imageURL">
+
+    <div class="commentsection">
+        <p>Average Rating: {{focusCakeAverage}} stars</p>
+        <div *ngFor="let comment of focusCake.comments">
+            <div class="comment">
+                <p>{{comment.rating}}</p>
+                <p>{{comment.content}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quoting Dojo</title>
+    <meta name="description" content="there are words and stuff">
+</head>
+
+<body>
+    <center>
+        <% if(messages.registration) { %>
+            <% for (var x of messages.registration) { %>
+             <h3><%= x %></h3>
+            <% } %>
+        <% } %>
+
+        <h1>Welcome to Quoting Dojo</h1>
+
+        <form action="/quotes" method="POST">
+            <p>Your Name:
+                <input type="text" name="author">
+            </p>
+            <p>Your Quote:
+                <textarea name="content"></textarea>
+            </p>
+
+            <p><input type="submit" value="Add my Quote!"></p>
+
+        </form>
+        <p><a href="/quotes"><button>Skip to the Quotes!</button></a></p>
+    </center>
+
+</body>
+
+</html>
